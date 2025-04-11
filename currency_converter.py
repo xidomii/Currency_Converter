@@ -79,7 +79,7 @@ class Currency:
             to_index = 2
 
         if from_index is None or to_index is None:
-            self.output_label.config(text="Bitte wähle Quell- und Zielwährung.")
+            self.output_label.config(text="Bitte wähle Quell- und Zielwährung.", font=("Arial", 30))
             return
 
         if from_index == to_index:
@@ -87,7 +87,7 @@ class Currency:
             return
 
 
-        amount_in_euro = value / self.exchange[from_index]
+        amount_in_euro = value / self.exchange[from_index] 
         result = amount_in_euro * self.exchange[to_index]
 
         self.output_label.config(text=f"{result:.2f} {self.currencies[to_index]}")
